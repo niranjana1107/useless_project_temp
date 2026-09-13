@@ -191,13 +191,6 @@ let audioContext = null;
 let popupTimeout = null;
 
 let isSpeaking = false;
-// ==========================================
-// ADAPTIVE BUTTON SPEED
-// ==========================================
-
-}
-
-
 /* =====================================================
    STORAGE
 ===================================================== */
@@ -217,36 +210,37 @@ function saveClicks() {
 
 function getSpeedLevel() {
 
-    // Escape difficulty
+        if (clicks <= 3) return 0;
+        if (clicks <= 6) return 1;
+        if (clicks <= 12) return 2;
+        if (clicks <= 18) return 3;
+        if (clicks <= 25) return 4;
+
+        return 5;
+}
+
 function getEscapeDifficulty() {
-  if (clicks <= 3) {
-    return 0; // No movement — easy first 3 clicks
-  }
 
-  if (clicks <= 6) {
-    return 0.25; // Very gentle
-  }
+        if (clicks <= 3) return 0;
+        if (clicks <= 6) return 0.25;
+        if (clicks <= 12) return 0.55;
+        if (clicks <= 18) return 0.8;
 
-  if (clicks <= 12) {
-    return 0.55; // Starting to become difficult
-  }
-
-  if (clicks <= 18) {
-    return 0.8;
-  }
-
-  return 1; // Maximum difficulty
+        return 1;
 }
-{function getEscapeSpeed() {
-  if (clicks <= 3) return 0;
-  if (clicks <= 6) return 1;
-  if (clicks <= 12) return 2.5;
-  if (clicks <= 18) return 4;
-  return 6;
+
+function getEscapeSpeed() {
+
+        if (clicks <= 3) return 0;
+        if (clicks <= 6) return 1;
+        if (clicks <= 12) return 2.5;
+        if (clicks <= 18) return 4;
+
+        return 6;
 }
-const speed = getEscapeSpeed();
 
 /* =====================================================
+}
    USELESSNESS SCORE
 ===================================================== */
 
@@ -1028,6 +1022,8 @@ function laughAtComment(
    COMMENT BOX
 ===================================================== */
 
+if (commentBox && commentButton) {
+
 commentBox.addEventListener(
     "input",
     () => {
@@ -1109,6 +1105,8 @@ commentButton.addEventListener(
         );
     }
 );
+
+}
 
 
 /* =====================================================
@@ -1303,11 +1301,6 @@ uselessButton.addEventListener("click", function () {
 
     uselessButton.style.background =
         colours[(clicks - 1) % colours.length];
-
-});
-
-
-
 
         /*
            Sound
