@@ -465,6 +465,8 @@ body::before {
 
     user-select: none;
 
+    overflow: hidden;
+
     -webkit-tap-highlight-color:
         transparent;
 }
@@ -497,6 +499,30 @@ body::before {
         ringPulse 2.4s ease-in-out infinite;
 
     pointer-events: none;
+}
+
+.button-ripple {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    transform: translate(-50%, -50%) scale(0);
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.42);
+
+    pointer-events: none;
+
+    animation: rippleExpand .55s ease-out forwards;
+}
+
+@keyframes rippleExpand {
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(8);
+    }
 }
 
 @keyframes ringPulse {
@@ -1473,6 +1499,32 @@ body.boss-mode {
 .screen-shake {
     animation:
         screenShake .4s ease;
+}
+
+.screen-flicker {
+    animation: screenFlicker .42s steps(2, end);
+}
+
+@keyframes screenFlicker {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    18% {
+        opacity: .18;
+    }
+
+    36% {
+        opacity: .92;
+    }
+
+    54% {
+        opacity: .28;
+    }
+
+    72% {
+        opacity: .82;
+    }
 }
 
 @keyframes screenShake {

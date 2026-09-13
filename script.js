@@ -367,6 +367,8 @@ function handleButtonClick(event) {
 
     event.preventDefault();
 
+    createRipple(event);
+
     if (!gameStarted) {
         gameStarted = true;
     }
@@ -393,6 +395,10 @@ function handleButtonClick(event) {
     playClickSound();
 
     flashButton();
+
+    if (clicks % 5 === 0) {
+        flickerScreen();
+    }
 
     randomEvent();
 
@@ -2138,5 +2144,66 @@ function escapeHTML(text) {
         text;
 
     return div.innerHTML;
+
+}
+
+
+/* =========================================================
+   BUTTON RIPPLE
+========================================================= */
+
+function createRipple(event) {
+
+    if (!button) {
+        return;
+    }
+
+    const rect =
+        button.getBoundingClientRect();
+
+    const ripple =
+        document.createElement("span");
+
+    ripple.className = "button-ripple";
+    ripple.style.left =
+        `${event.clientX - rect.left}px`;
+    ripple.style.top =
+        `${event.clientY - rect.top}px`;
+
+    button.appendChild(ripple);
+
+    ripple.addEventListener(
+        "animationend",
+        () => ripple.remove(),
+        { once: true }
+    );
+
+}
+
+
+/* =========================================================
+   SCREEN FLICKER
+========================================================= */
+
+function flickerScreen() {
+
+    document.body.classList.remove(
+        "screen-flicker"
+    );
+
+    void document.body.offsetWidth;
+
+    document.body.classList.add(
+        "screen-flicker"
+    );
+
+    setTimeout(
+        () => {
+            document.body.classList.remove(
+                "screen-flicker"
+            );
+        },
+        450
+    );
 
 }
