@@ -94,6 +94,71 @@ const toast =
 
 const toastText =
     document.getElementById("toastText");
+    // ============================================================
+// BUTTON SOUND + COLOUR EFFECT
+// ============================================================
+
+const clickColors = [
+    "#00e5ff",
+    "#7c4dff",
+    "#00ff88",
+    "#ff9800",
+    "#ff00aa",
+    "#ffff00",
+    "#00bcd4",
+    "#ffffff"
+];
+
+function playClickSound() {
+    const AudioContext =
+        window.AudioContext || window.webkitAudioContext;
+
+    if (!AudioContext) return;
+
+    const audio = new AudioContext();
+
+    const oscillator = audio.createOscillator();
+    const gain = audio.createGain();
+
+    oscillator.type = "square";
+
+    oscillator.frequency.setValueAtTime(
+        300 + Math.random() * 500,
+        audio.currentTime
+    );
+
+    gain.gain.setValueAtTime(0.12, audio.currentTime);
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audio.currentTime + 0.15
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audio.destination);
+
+    oscillator.start();
+    oscillator.stop(audio.currentTime + 0.15);
+}
+
+function flashButton() {
+    const randomColor =
+        clickColors[Math.floor(Math.random() * clickColors.length)];
+
+    // Change red → random colour
+    uselessButton.style.backgroundColor = randomColor;
+
+    uselessButton.style.boxShadow =
+        `0 0 30px ${randomColor}, 0 0 60px ${randomColor}`;
+
+    // Change back to red
+    setTimeout(() => {
+        uselessButton.style.backgroundColor = "#ff1744";
+
+        uselessButton.style.boxShadow =
+            "0 0 20px rgba(255, 23, 68, 0.7)";
+    }, 300);
+}
 
 
 /* =====================================================
