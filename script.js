@@ -1283,17 +1283,30 @@ function showAchievement(
 /* =====================================================
    BUTTON CLICK
 ===================================================== */
+uselessButton.addEventListener("click", function () {
 
-uselessButton.addEventListener(
-    "click",
-   
-    () => {
-        playClickSound();
-flashButton();
+    clicks++;
 
-        clicks++;
+    console.log("BUTTON CLICKED:", clicks);
 
-        saveClicks();
+    clickCount.textContent = clicks;
+
+    // Change button colour
+    const colours = [
+        "#ff1744",
+        "#7c4dff",
+        "#00e5ff",
+        "#00e676",
+        "#ffea00",
+        "#ff9100"
+    ];
+
+    uselessButton.style.background =
+        colours[(clicks - 1) % colours.length];
+
+});
+
+
 
 
         /*
