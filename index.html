@@ -1,305 +1,121 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>THE USELESS BUTTON 💀</title>
-
+    <title>The Useless Button 😂</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="background">
-        <div class="blob blob1"></div>
-        <div class="blob blob2"></div>
-        <div class="blob blob3"></div>
-    </div>
+    <div class="container">
 
-    <div id="particles"></div>
+        <h1>🔴 THE USELESS BUTTON</h1>
 
-    <main class="container">
+        <p class="subtitle">
+            Whatever you do... don't press it.
+        </p>
 
-        <!-- HEADER -->
-
-        <header>
-
-            <div class="warning">
-                ⚠️ 100% USELESS TECHNOLOGY ⚠️
-            </div>
-
-            <h1>
-                THE
-                <span>USELESS</span>
-                BUTTON
-            </h1>
-
-            <p class="subtitle">
-                Don't press it.
-                <strong>Seriously.</strong>
-            </p>
-
-        </header>
-
-
-        <!-- MAIN GAME -->
-
-        <section class="game-card">
-
-            <div class="danger-label">
-                🚨 DO NOT PRESS 🚨
-            </div>
+        <div class="game">
 
             <div id="buttonArea">
-
                 <button id="uselessButton">
                     PRESS ME
                 </button>
-
             </div>
 
-            <div id="message">
-                Go ahead... nothing will happen. 😏
-            </div>
+            <h2 id="message">
+                Nothing will happen. Probably.
+            </h2>
 
-            <div class="click-hint">
-                Every click makes the button more useless.
-            </div>
+            <div class="stats">
 
-        </section>
-
-
-        <!-- STATS -->
-
-        <section class="stats">
-
-            <div class="stat">
-                <div class="stat-icon">🖱️</div>
-
-                <div
-                    class="stat-number"
-                    id="clickCount">
-                    0
+                <div>
+                    <strong id="clickCount">0</strong>
+                    <span>Clicks</span>
                 </div>
 
-                <div class="stat-label">
-                    USELESS CLICKS
-                </div>
-            </div>
-
-
-            <div class="stat">
-                <div class="stat-icon">⏱️</div>
-
-                <div
-                    class="stat-number"
-                    id="timeWasted">
-                    0s
+                <div>
+                    <strong id="speedLevel">0</strong>
+                    <span>Speed Level</span>
                 </div>
 
-                <div class="stat-label">
-                    TIME WASTED
-                </div>
             </div>
 
-
-            <div class="stat">
-                <div class="stat-icon">📉</div>
-
-                <div
-                    class="stat-number"
-                    id="productivity">
-                    100%
-                </div>
-
-                <div class="stat-label">
-                    PRODUCTIVITY
-                </div>
-            </div>
-
-        </section>
+        </div>
 
 
-        <!-- AI ROAST -->
+        <!-- COMMENT BOX -->
 
-        <section class="glass-card">
+        <div class="comments">
 
-            <div class="section-title">
-                🤖 <span>AI USELESSNESS ANALYSIS</span>
-            </div>
+            <h2>💬 Talk to the Button</h2>
 
-            <div
-                id="aiResult"
-                class="ai-result">
+            <p>
+                Write something. The computer will read it and laugh at you.
+            </p>
 
-                Our highly questionable AI is waiting
-                for enough evidence to judge you.
-            </div>
+            <textarea
+                id="commentBox"
+                placeholder="Tell the button something..."
+            ></textarea>
 
-            <button
-                id="analyzeButton"
-                class="action-button">
-
-                🤖 ANALYZE ME
-
+            <button id="commentButton">
+                🗣️ READ & LAUGH
             </button>
 
-        </section>
+            <p id="computerResponse"></p>
+
+        </div>
 
 
         <!-- ACHIEVEMENTS -->
 
-        <section class="glass-card">
+        <div class="achievements">
 
-            <div class="section-title">
-                🏆 <span>USELESS ACHIEVEMENTS</span>
-            </div>
+            <h2>🏆 Achievements</h2>
 
-            <div class="achievements">
+            <div id="achievementList">
 
-                <div
-                    class="achievement"
-                    id="achievement1">
-
-                    <div class="achievement-icon">
-                        🥚
-                    </div>
-
-                    <b>FIRST MISTAKE</b>
-
-                    <small>
-                        1 click
-                    </small>
-
+                <div class="achievement" id="a1">
+                    🥇 First Mistake
                 </div>
 
-
-                <div
-                    class="achievement"
-                    id="achievement10">
-
-                    <div class="achievement-icon">
-                        🤨
-                    </div>
-
-                    <b>WHY?</b>
-
-                    <small>
-                        10 clicks
-                    </small>
-
+                <div class="achievement" id="a5">
+                    🏃 The Escape Begins
                 </div>
 
-
-                <div
-                    class="achievement"
-                    id="achievement25">
-
-                    <div class="achievement-icon">
-                        💀
-                    </div>
-
-                    <b>NO LIFE</b>
-
-                    <small>
-                        25 clicks
-                    </small>
-
+                <div class="achievement" id="a12">
+                    ⚡ Getting Faster
                 </div>
 
-
-                <div
-                    class="achievement"
-                    id="achievement50">
-
-                    <div class="achievement-icon">
-                        🗿
-                    </div>
-
-                    <b>ABSOLUTE UNIT</b>
-
-                    <small>
-                        50 clicks
-                    </small>
-
+                <div class="achievement" id="a30">
+                    💀 Professional Time Waster
                 </div>
 
-
-                <div
-                    class="achievement"
-                    id="achievement100">
-
-                    <div class="achievement-icon">
-                        👑
-                    </div>
-
-                    <b>LEGEND</b>
-
-                    <small>
-                        100 clicks
-                    </small>
-
+                <div class="achievement" id="a60">
+                    👑 Button Destroyer
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
-
-        <!-- RESET -->
-
-        <button
-            id="resetButton"
-            class="reset-button">
-
-            🔄 RESET MY BAD DECISIONS
-
-        </button>
-
-
-        <footer>
-
-            Made with ❤️ and absolutely no productivity.
-
-            <br>
-
-            <span>
-                © 2026 The Useless Button
-            </span>
-
-        </footer>
-
-    </main>
+    </div>
 
 
     <!-- ACHIEVEMENT POPUP -->
 
-    <div
-        id="achievementPopup"
-        class="popup">
+    <div id="popup">
 
-        <div class="popup-box">
+        <div class="popupBox">
 
-            <div
-                id="popupIcon"
-                class="popup-icon">
-                🏆
-            </div>
+            <div id="popupIcon">🏆</div>
 
-            <div class="popup-small">
-                ACHIEVEMENT UNLOCKED
-            </div>
+            <h2>ACHIEVEMENT!</h2>
 
-            <h2 id="popupTitle">
-                CONGRATULATIONS
-            </h2>
-
-            <p id="popupText">
-                You accomplished absolutely nothing.
-            </p>
+            <p id="popupMessage"></p>
 
         </div>
 
