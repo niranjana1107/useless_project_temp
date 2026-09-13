@@ -207,6 +207,10 @@ button{user-select:none;-webkit-tap-highlight-color:transparent}
 .stat-card:nth-child(3){animation-delay:.16s}
 .stat-card:nth-child(4){animation-delay:.24s}
 .stat-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.2)}
+.combo-card.combo-active strong{
+  color:#ff304f;animation:comboPulse .3s ease-out;
+}
+@keyframes comboPulse{0%{transform:scale(1.4);opacity:1}100%{transform:scale(1);opacity:1}}
 .stat-icon{
   width:42px;height:42px;display:grid;place-items:center;border-radius:12px;
   background:rgba(255,255,255,.05);font-size:19px;

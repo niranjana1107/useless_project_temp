@@ -106,6 +106,9 @@ const robotChestText =
 
 const cryingRobot =
     document.getElementById("cryingRobot");
+
+const comboCount =
+    document.getElementById("comboCount");
     // ============================================================
 // BUTTON SOUND + COLOUR EFFECT
 // ============================================================
@@ -193,6 +196,12 @@ let audioContext = null;
 let popupTimeout = null;
 
 let isSpeaking = false;
+
+let combo = 0;
+
+let comboTimeout = null;
+
+const COMBO_TIME_WINDOW = 800;
 /* =====================================================
    STORAGE
 ===================================================== */
@@ -1336,6 +1345,22 @@ uselessButton.addEventListener("click", function () {
     console.log("BUTTON CLICKED:", clicks);
 
     clickCount.textContent = clicks;
+
+    // COMBO SYSTEM
+    if (comboTimeout) {
+        clearTimeout(comboTimeout);
+    }
+
+    combo++;
+    comboCount.textContent = combo + "x";
+    comboCount.parentElement.parentElement.classList.add("combo-active");
+
+    // Reset combo after time window
+    comboTimeout = setTimeout(() => {
+        combo = 0;
+        comboCount.textContent = "0x";
+        comboCount.parentElement.parentElement.classList.remove("combo-active");
+    }, COMBO_TIME_WINDOW);
 
     // Keep button red - no colour change
     uselessButton.style.background =
