@@ -32,10 +32,7 @@ For Software:
 - [Web Audio API , Firebase Realtime Database]
 - [Visual Studio Code, Git, GitHub, Live Server]
 
-For Hardware:
-- []
-- []
-- []
+
 
 ### Implementation
 For Software:The project is implemented as a responsive web application using HTML, CSS and JavaScript. JavaScript handles button clicks, funny sound effects, changing messages, the escaping-button behavior, click tracking, achievements, timer, and fake AI analysis. The Web Audio API generates the original sound effects directly in the browser. Firebase Realtime Database can be used to store and display the global leaderboard.
