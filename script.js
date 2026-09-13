@@ -212,7 +212,7 @@ function saveClicks() {
 
 function getSpeedLevel() {
 
-    if (clicks <= 3) return 0;
+    if (clicks <= 5) return 0;
     if (clicks <= 6) return 1;
     if (clicks <= 12) return 2;
     if (clicks <= 18) return 3;
@@ -224,7 +224,7 @@ function getSpeedLevel() {
 
 function getEscapeDifficulty() {
 
-    if (clicks <= 3) return 0;
+    if (clicks <= 5) return 0;
     if (clicks <= 6) return 0.25;
     if (clicks <= 12) return 0.45;
     if (clicks <= 18) return 0.2;
@@ -236,7 +236,7 @@ function getEscapeDifficulty() {
 
 function getEscapeSpeed() {
 
-        if (clicks <= 3) return 0;
+        if (clicks <= 5) return 0;
         if (clicks <= 6) return 1;
         if (clicks <= 12) return 1.5;
         if (clicks <= 18) return 0.5;
@@ -570,7 +570,7 @@ function moveButton(
     predicted = false
 ) {
 
-    if (clicks < 3) {
+    if (clicks < 6) {
         return;
     }
 
