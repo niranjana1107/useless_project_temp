@@ -1261,7 +1261,10 @@ function showAchievement(
 
 uselessButton.addEventListener(
     "click",
+   
     () => {
+        playClickSound();
+flashButton();
 
         clicks++;
 
