@@ -519,7 +519,7 @@ function moveButton(
     predicted = false
 ) {
 
-    if (clicks < 1) {
+    if (clicks < 5) {
         return;
     }
 
