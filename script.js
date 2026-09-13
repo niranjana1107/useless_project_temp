@@ -195,16 +195,6 @@ let isSpeaking = false;
 // ADAPTIVE BUTTON SPEED
 // ==========================================
 
-function getEscapeSpeed() {
-    // Clicks 1–10: moves, but slowly
-    if (clicks <= 10) {
-        return 0.35;
-    }
-
-    // Every 6 clicks, increase the speed
-    const level = Math.floor((clicks - 10) / 6);
-
-    return Math.min(2.0, 0.35 + (level * 0.30));
 }
 
 
