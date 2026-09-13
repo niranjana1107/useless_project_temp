@@ -2,128 +2,620 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Useless Button 😂</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="The Useless Button - an unnecessarily competitive button clicking experience."
+    >
+
+    <title>THE USELESS BUTTON</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- Background effects -->
+    <div class="background-grid"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
 
-        <h1>🔴 THE USELESS BUTTON</h1>
+    <!-- ================= HEADER ================= -->
 
-        <p class="subtitle">
-            Whatever you do... don't press it.
-        </p>
+    <header class="topbar">
 
-        <div class="game">
+        <div class="brand">
+            <div class="brand-icon">⚡</div>
 
-            <div id="buttonArea">
-                <button id="uselessButton">
-                    PRESS ME
-                </button>
-            </div>
-
-            <h2 id="message">
-                Nothing will happen. Probably.
-            </h2>
-
-            <div class="stats">
-
-                <div>
-                    <strong id="clickCount">0</strong>
-                    <span>Clicks</span>
+            <div>
+                <div class="brand-title">
+                    THE USELESS BUTTON
                 </div>
 
-                <div>
-                    <strong id="speedLevel">0</strong>
-                    <span>Speed Level</span>
+                <div class="brand-subtitle">
+                    ZERO PURPOSE. MAXIMUM COMPETITION.
                 </div>
-
             </div>
-
         </div>
 
+        <div class="status">
+            <span class="status-dot"></span>
+            SYSTEM ONLINE
+        </div>
 
-        <!-- COMMENT BOX -->
+    </header>
 
-        <div class="comments">
 
-            <h2>💬 Talk to the Button</h2>
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-badge">
+                🏆 HACKATHON EDITION
+            </div>
+
+            <h1>
+                HOW USELESS
+                <span>ARE YOU?</span>
+            </h1>
 
             <p>
-                Write something. The computer will read it and laugh at you.
+                Click the button.
+                Chase the button.
+                Question your life choices.
             </p>
-<div class="comment-section">
-    <h2>🗣️ Talk to the Computer</h2>
 
-    <textarea
-        id="commentBox"
-        placeholder="Write something useless..."
-    ></textarea>
-
-    <button id="commentButton">
-        🧠 READ MY COMMENT
-    </button>
-
-    <div id="computerResponse">
-        🤖 Waiting for your useless wisdom...
-    </div>
-</div>
-
-        </div>
+        </section>
 
 
-        <!-- ACHIEVEMENTS -->
+        <!-- ================= GAME CARD ================= -->
 
-        <div class="achievements">
+        <section class="game-card glass">
 
-            <h2>🏆 Achievements</h2>
+            <div class="game-header">
 
-            <div id="achievementList">
+                <div>
+                    <div class="section-label">
+                        PRIMARY OBJECTIVE
+                    </div>
 
-                <div class="achievement" id="a1">
-                    🥇 First Mistake
+                    <h2>
+                        Catch the Button
+                    </h2>
                 </div>
 
-                <div class="achievement" id="a5">
-                    🏃 The Escape Begins
-                </div>
-
-                <div class="achievement" id="a12">
-                    ⚡ Getting Faster
-                </div>
-
-                <div class="achievement" id="a30">
-                    💀 Professional Time Waster
-                </div>
-
-                <div class="achievement" id="a60">
-                    👑 Button Destroyer
+                <div class="difficulty">
+                    <span>THREAT LEVEL</span>
+                    <strong id="threatLevel">
+                        0%
+                    </strong>
                 </div>
 
             </div>
 
+
+            <!-- Game area -->
+
+            <div
+                id="buttonArea"
+                class="button-area"
+            >
+
+                <div class="crosshair"></div>
+
+                <div class="arena-text">
+                    <span id="arenaStatus">
+                        THE BUTTON IS CALM...
+                    </span>
+                </div>
+
+                <button
+                    id="uselessButton"
+                    class="useless-button"
+                    type="button"
+                >
+                    <span class="button-glow"></span>
+                    <span id="buttonText">
+                        CLICK ME
+                    </span>
+                </button>
+
+            </div>
+
+
+            <!-- Game footer -->
+
+            <div class="game-footer">
+
+                <div class="instruction">
+                    <span class="instruction-icon">🖱️</span>
+
+                    <span id="gameMessage">
+                        You have no idea what you're about to start.
+                    </span>
+                </div>
+
+                <div class="escape-info">
+                    ESCAPE MODE:
+                    <strong id="escapeMode">
+                        OFF
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card glass">
+
+                <div class="stat-icon">
+                    🖱️
+                </div>
+
+                <div class="stat-content">
+                    <span>CLICKS</span>
+                    <strong id="clickCount">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card glass">
+
+                <div class="stat-icon">
+                    ⚡
+                </div>
+
+                <div class="stat-content">
+                    <span>SPEED LEVEL</span>
+                    <strong id="speedLevel">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card glass">
+
+                <div class="stat-icon">
+                    📈
+                </div>
+
+                <div class="stat-content">
+                    <span>USELESSNESS</span>
+                    <strong id="uselessScore">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card glass">
+
+                <div class="stat-icon">
+                    ⏱️
+                </div>
+
+                <div class="stat-content">
+                    <span>SESSION</span>
+                    <strong id="sessionTimer">
+                        00:00
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TWO COLUMN ================= -->
+
+        <section class="content-grid">
+
+            <!-- ================= COMPUTER COMMENTS ================= -->
+
+            <div class="panel glass comments-panel">
+
+                <div class="panel-heading">
+
+                    <div class="panel-icon">
+                        🤖
+                    </div>
+
+                    <div>
+                        <div class="section-label">
+                            AI COMMENTATOR
+                        </div>
+
+                        <h2>
+                            Make The Computer Laugh
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <p class="panel-description">
+                    Write something. The computer will read your
+                    comment aloud and then laugh at it.
+                </p>
+
+
+                <div class="comment-input-wrapper">
+
+                    <textarea
+                        id="commentBox"
+                        maxlength="180"
+                        placeholder="Type your most useless thought..."
+                    ></textarea>
+
+                    <div class="character-count">
+                        <span id="characterCount">0</span>/180
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="commentButton"
+                    class="neon-button"
+                    type="button"
+                >
+                    <span>🗣️</span>
+                    READ & LAUGH
+                </button>
+
+
+                <!-- Comment display -->
+
+                <div
+                    id="commentDisplay"
+                    class="comment-display hidden"
+                >
+
+                    <div class="comment-avatar">
+                        👤
+                    </div>
+
+                    <div class="comment-content">
+
+                        <span class="comment-label">
+                            YOUR COMMENT
+                        </span>
+
+                        <p id="commentText">
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Computer response -->
+
+                <div
+                    id="computerResponse"
+                    class="computer-response"
+                >
+                    <span class="robot-face">🤖</span>
+
+                    <span id="responseText">
+                        Waiting for your questionable wisdom...
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- ================= AI ANALYSIS ================= -->
+
+            <div class="panel glass">
+
+                <div class="panel-heading">
+
+                    <div class="panel-icon">
+                        🧠
+                    </div>
+
+                    <div>
+                        <div class="section-label">
+                            TOTALLY REAL™ ANALYSIS
+                        </div>
+
+                        <h2>
+                            Uselessness Analysis
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="score-display">
+
+                    <div class="score-circle">
+
+                        <div class="score-number">
+                            <span id="bigScore">
+                                0
+                            </span>
+                        </div>
+
+                        <span>
+                            / 100
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <h3 id="analysisTitle">
+                    You are surprisingly productive.
+                </h3>
+
+                <p id="analysisText">
+                    Keep clicking. We need more data.
+                </p>
+
+
+                <div class="progress-container">
+
+                    <div class="progress-label">
+                        <span>USELESSNESS METER</span>
+
+                        <span id="progressPercent">
+                            0%
+                        </span>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div
+                            id="progressBar"
+                            class="progress-fill"
+                        ></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACHIEVEMENTS ================= -->
+
+        <section class="panel glass">
+
+            <div class="panel-heading">
+
+                <div class="panel-icon">
+                    🏆
+                </div>
+
+                <div>
+                    <div class="section-label">
+                        ACHIEVEMENTS
+                    </div>
+
+                    <h2>
+                        Totally Meaningless Milestones
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="achievement-grid">
+
+                <div
+                    class="achievement"
+                    id="achievement1"
+                >
+                    <div class="achievement-icon">
+                        👶
+                    </div>
+
+                    <div>
+                        <strong>FIRST MISTAKE</strong>
+                        <span>Click once.</span>
+                    </div>
+                </div>
+
+
+                <div
+                    class="achievement"
+                    id="achievement5"
+                >
+                    <div class="achievement-icon">
+                        🏃
+                    </div>
+
+                    <div>
+                        <strong>ESCAPE ARTIST</strong>
+                        <span>Reach 5 clicks.</span>
+                    </div>
+                </div>
+
+
+                <div
+                    class="achievement"
+                    id="achievement12"
+                >
+                    <div class="achievement-icon">
+                        ⚡
+                    </div>
+
+                    <div>
+                        <strong>SPEED DEMON</strong>
+                        <span>Reach level 2.</span>
+                    </div>
+                </div>
+
+
+                <div
+                    class="achievement"
+                    id="achievement30"
+                >
+                    <div class="achievement-icon">
+                        🧌
+                    </div>
+
+                    <div>
+                        <strong>PROFESSIONAL</strong>
+                        <span>30 clicks.</span>
+                    </div>
+                </div>
+
+
+                <div
+                    class="achievement"
+                    id="achievement60"
+                >
+                    <div class="achievement-icon">
+                        👑
+                    </div>
+
+                    <div>
+                        <strong>BUTTON DESTROYER</strong>
+                        <span>60 clicks.</span>
+                    </div>
+                </div>
+
+
+                <div
+                    class="achievement"
+                    id="achievement100"
+                >
+                    <div class="achievement-icon">
+                        💀
+                    </div>
+
+                    <div>
+                        <strong>WHY?</strong>
+                        <span>100 clicks.</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LOCAL HALL OF FAME ================= -->
+
+        <section class="panel glass">
+
+            <div class="panel-heading">
+
+                <div class="panel-icon">
+                    🥇
+                </div>
+
+                <div>
+                    <div class="section-label">
+                        LOCAL HALL OF FAME
+                    </div>
+
+                    <h2>
+                        Most Useless Sessions
+                    </h2>
+                </div>
+
+            </div>
+
+            <p class="panel-description">
+                Your best scores are saved on this device.
+            </p>
+
+
+            <div id="leaderboard">
+
+                <div class="leaderboard-empty">
+                    No legends yet. Become the first.
+                </div>
+
+            </div>
+
+
+            <button
+                id="saveScoreButton"
+                class="secondary-button"
+                type="button"
+            >
+                🏆 SAVE CURRENT SCORE
+            </button>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <div>
+                THE USELESS BUTTON © 2026
+            </div>
+
+            <div>
+                BUILT FOR ABSOLUTELY NO REASON
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ================= ACHIEVEMENT POPUP ================= -->
+
+    <div
+        id="achievementPopup"
+        class="achievement-popup"
+    >
+
+        <div class="popup-icon" id="popupIcon">
+            🏆
+        </div>
+
+        <div>
+
+            <span>
+                ACHIEVEMENT UNLOCKED
+            </span>
+
+            <strong id="popupTitle">
+                Achievement
+            </strong>
+
         </div>
 
     </div>
 
 
-    <!-- ACHIEVEMENT POPUP -->
+    <!-- ================= TOAST ================= -->
 
-    <div id="popup">
-
-        <div class="popupBox">
-
-            <div id="popupIcon">🏆</div>
-
-            <h2>ACHIEVEMENT!</h2>
-
-            <p id="popupMessage"></p>
-
-        </div>
-
+    <div
+        id="toast"
+        class="toast"
+    >
+        <span id="toastText"></span>
     </div>
 
 
