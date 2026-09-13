@@ -48,7 +48,7 @@ For Software:The project is implemented as a responsive web application using HT
 
 No server or backend is required.
 
-Simply open `index.html` in a browser and start clicking the button.]
+Simply open `index.html` in a browser and start clicking the button.
 
 # Run
 [commands]
