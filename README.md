@@ -286,37 +286,20 @@ The project follows a simple frontend architecture:
              localStorage)
 This workflow illustrates how the user interacts with The Useless Button. When the user attempts to click the button, JavaScript processes the interaction, updates the game statistics and score, plays feedback sounds, checks achievements, and controls the button's movement. The system also monitors cursor movement and predicts the cursor's direction to make the button escape. The updated game state is then displayed through animations, notifications, and the robot's reactions, while selected progress is stored locally using browser LocalStorage.
 
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+#### Screen Recording
+
+[Watch the screen recording](Screen%20Recording%202026-09-13%20165845.mp4)
+
+*A demonstration of the Useless Button, including its click interactions, animations, statistics, achievements, and playful reactions.*
 
 # Additional Demos
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [Niranjana]: [Frontend and Game logic]
+- [Raghuram]: [Features and interaction]
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
