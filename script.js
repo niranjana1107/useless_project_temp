@@ -142,22 +142,12 @@ function playClickSound() {
 }
 
 function flashButton() {
-    const randomColor =
-        clickColors[Math.floor(Math.random() * clickColors.length)];
-
-    // Change red → random colour
-    uselessButton.style.backgroundColor = randomColor;
+    // Keep button red - no colour change
+    uselessButton.style.background =
+        "radial-gradient(circle at 35% 30%,#ff6078,#ff304f 40%,#9e1029 100%)";
 
     uselessButton.style.boxShadow =
-        `0 0 30px ${randomColor}, 0 0 60px ${randomColor}`;
-
-    // Change back to red
-    setTimeout(() => {
-        uselessButton.style.backgroundColor = "#ff1744";
-
-        uselessButton.style.boxShadow =
-            "0 0 20px rgba(255, 23, 68, 0.7)";
-    }, 300);
+        "0 0 0 8px rgba(255,48,79,.05),0 0 40px rgba(255,48,79,.3),0 18px 45px rgba(0,0,0,.5)";
 }
 
 
@@ -1289,18 +1279,9 @@ uselessButton.addEventListener("click", function () {
 
     clickCount.textContent = clicks;
 
-    // Change button colour
-    const colours = [
-        "#ff1744",
-        "#7c4dff",
-        "#00e5ff",
-        "#00e676",
-        "#ffea00",
-        "#ff9100"
-    ];
-
+    // Keep button red - no colour change
     uselessButton.style.background =
-        colours[(clicks - 1) % colours.length];
+        "radial-gradient(circle at 35% 30%,#ff6078,#ff304f 40%,#9e1029 100%)";
 
         /*
            Sound
