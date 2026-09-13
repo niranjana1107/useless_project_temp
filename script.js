@@ -227,15 +227,34 @@ function saveClicks() {
 
 function getSpeedLevel() {
 
-    if (clicks < 5) {
-        return 0;
-    }
+    // Escape difficulty
+function getEscapeDifficulty() {
+  if (clicks <= 3) {
+    return 0; // No movement — easy first 3 clicks
+  }
 
-    return Math.floor(
-        (clicks - 5) / 6
-    ) + 1;
+  if (clicks <= 6) {
+    return 0.25; // Very gentle
+  }
+
+  if (clicks <= 12) {
+    return 0.55; // Starting to become difficult
+  }
+
+  if (clicks <= 18) {
+    return 0.8;
+  }
+
+  return 1; // Maximum difficulty
 }
-
+{function getEscapeSpeed() {
+  if (clicks <= 3) return 0;
+  if (clicks <= 6) return 1;
+  if (clicks <= 12) return 2.5;
+  if (clicks <= 18) return 4;
+  return 6;
+}
+const speed = getEscapeSpeed();
 
 /* =====================================================
    USELESSNESS SCORE
