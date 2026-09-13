@@ -464,7 +464,7 @@ document.addEventListener(
             newY;
 
         if (
-    clicks >= 1 &&
+    clicks >= 5 &&
     event.pointerType === "mouse"
 
         ) {
