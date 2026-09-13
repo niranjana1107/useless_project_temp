@@ -233,15 +233,16 @@ No backend server is required.
 
 
 
-# Screenshots (Add at least 3)
-![](Add screenshot 1 here with proper name)
-HTML code
+# Screenshots
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Main game arena](Screenshot%202026-09-13%20152321.png)
+*The main game arena with the escaping button, click statistics, combo, score, timer, and escape threat indicator.*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Interaction and achievements panels](Screenshot%202026-09-13%20152452.png)
+*The Talk to the Button panel, uselessness analysis, and achievement progress.*
+
+![Robot and leaderboard](Screenshot%202026-09-13%20152624.png)
+*The crying robot, local leaderboard, save-score action, reset control, and sound toggle.*
 
 # Diagrams
 ![Workflow](### 5. System Architecture
