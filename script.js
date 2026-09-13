@@ -1569,8 +1569,25 @@ function initialize() {
     renderLeaderboard();
 
     updateTimer();
-
 }
+    const resetButton = document.getElementById("resetButton");
+
+resetButton.addEventListener("click", () => {
+    if (!confirm("Reset everything for the next player?")) return;
+
+    localStorage.removeItem("uselessClicks");
+    localStorage.removeItem("uselessAchievements");
+    localStorage.removeItem("uselessLeaderboard");
+
+    clicks = 0;
+    sessionStart = Date.now();
+
+    updateDisplay();
+    checkAchievements();
+    renderLeaderboard();
+
+    showToast("🔄 Game reset! Ready for the next player.");
+});
 
 
 initialize();
