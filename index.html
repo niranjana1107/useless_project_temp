@@ -633,55 +633,17 @@
 
 
     
-    <button
+ <!-- RESET BUTTON -->
+<button
     id="resetButton"
     class="secondary-button"
     type="button"
 >
     🔄 RESET FOR NEXT PLAYER
-    <script src="script.js"></script>
-
 </button>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    const button = document.getElementById("uselessButton");
-    const counter = document.getElementById("clickCount");
-
-    if (!button) {
-        console.error("ERROR: uselessButton was not found!");
-        return;
-    }
-
-    let testClicks = 0;
-
-    button.addEventListener("click", function (event) {
-
-        event.stopPropagation();
-
-        testClicks++;
-
-        console.log("BUTTON WORKS:", testClicks);
-
-        if (counter) {
-            counter.textContent = testClicks;
-        }
-
-        const colours = [
-            "#ff1744",
-            "#7c4dff",
-            "#00e5ff",
-            "#00e676",
-            "#ffea00",
-            "#ff9100"
-        ];
-
-        button.style.background =
-            colours[(testClicks - 1) % colours.length];
-    });
-
-});
-</script>
+<!-- MAIN JAVASCRIPT -->
+<script src="script.js"></script>
 
 </body>
 </html>
