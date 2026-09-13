@@ -394,13 +394,13 @@ function updateCommentator() {
 
     const level = getSpeedLevel();
     const reactions = [
-        ["WAITING...", "PLEASE DON'T CLICK IT...", "WHY"],
-        ["UNEASY", "That was unnecessary.", "NO"],
-        ["CONCERNED", "Please stop clicking me.", "HELP"],
-        ["RELIEVED", "Level 3 is... almost fair?", "EASY"],
-        ["PANICKING", "The button has entered moderate mode!", "RUN"],
-        ["CRITICAL", "Advanced escape protocol engaged!", "ERROR"],
-        ["DEFEATED?", "This button cannot be caught.", "RIP"]
+        ["SPEECHLESS", "You're really clicking a useless button? Bold life choice.", "WOW"],
+        ["DISGUSTED", "That's the dumbest click I've ever witnessed.", "CRINGE"],
+        ["APPALLED", "I've seen more coordination in a potato.", "YIKES"],
+        ["HORRIFIED", "Your mouse skills are making me question your existence.", "TRAGIC"],
+        ["MELTDOWN", "Please seek help. Seriously. Get a hobby.", "DOOMED"],
+        ["EXISTENTIAL CRISIS", "I'm an AI and even I'm more useful than this situation.", "WHY?"],
+        ["DEAD INSIDE", "Congratulations, you've achieved peak uselessness. You're a legend."]
     ];
 
     const reaction = reactions[level];

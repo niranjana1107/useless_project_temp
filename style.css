@@ -362,7 +362,7 @@ footer{
 .robot-title h2{font-size:20px}
 .robot-status{
   padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);
-  color:#777789;font-size:8px;font-weight:900;letter-spacing:1px;
+  color:#777789;font-size:16px;font-weight:900;letter-spacing:1px;
 }
 .robot-stage{
   position:relative;width:100%;min-height:650px;display:flex;justify-content:center;
@@ -436,7 +436,7 @@ footer{
 .robot-chest{
   position:absolute;left:50%;top:45px;transform:translateX(-50%);
   width:85px;height:55px;display:grid;place-items:center;border-radius:12px;
-  background:#091018;border:1px solid #53697d;color:var(--cyan);font-weight:950;
+  background:#091018;border:1px solid #53697d;color:var(--cyan);font-weight:950;font-size:18px;
   letter-spacing:2px;box-shadow:0 0 20px rgba(64,233,255,.12);
 }
 .robot-light{
@@ -454,7 +454,7 @@ footer{
   position:absolute;left:50%;bottom:28px;transform:translateX(-50%);
   width:min(520px,80%);padding:13px 18px;text-align:center;border-radius:999px;
   background:rgba(7,10,16,.88);border:1px solid rgba(64,233,255,.14);
-  color:#9ceefa;font-size:11px;letter-spacing:.4px;z-index:8;
+  color:#9ceefa;font-size:16px;letter-spacing:.4px;z-index:8;
 }
 
 @keyframes slideUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
