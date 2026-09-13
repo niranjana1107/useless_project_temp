@@ -94,151 +94,6 @@ const toast =
 
 const toastText =
     document.getElementById("toastText");
-
-    /* =====================================================
-   GIANT CRYING ROBOT SYSTEM
-===================================================== */
-
-const cryingRobot =
-    document.getElementById("cryingRobot");
-
-const robotMessage =
-    document.getElementById("robotMessage");
-
-const robotStatus =
-    document.getElementById("robotStatus");
-
-const robotChestText =
-    document.getElementById("robotChestText");
-
-
-let robotTimer = null;
-
-
-/* =====================================================
-   ROBOT REACTIONS
-===================================================== */
-
-const robotReactions = [
-
-    "🤖 NOOOOOOO! WHY DID YOU CLICK IT?!",
-
-    "🤖 MY CIRCUITS... THEY'RE FULL OF REGRET!",
-
-    "🤖 I WAS HAVING SUCH A GOOD DAY...",
-
-    "🤖 PLEASE! I HAVE A FAMILY!",
-
-    "🤖 THAT CLICK WAS COMPLETELY UNNECESSARY!",
-
-    "🤖 ERROR 404: MY HAPPINESS NOT FOUND.",
-
-    "🤖 YOU CLICKED IT AGAIN?!",
-
-    "🤖 I AM LITERALLY A ROBOT. HAVE MERCY.",
-
-    "🤖 MY PROCESSOR CAN'T HANDLE THIS.",
-
-    "🤖 WHY ARE HUMANS LIKE THIS?!"
-
-];
-
-
-/* =====================================================
-   SHOW ROBOT
-===================================================== */
-
-function showCryingRobot() {
-
-    /*
-       Pick a random reaction.
-    */
-
-    const reaction =
-        robotReactions[
-            Math.floor(
-                Math.random() *
-                robotReactions.length
-            )
-        ];
-
-
-    robotMessage.textContent =
-        reaction;
-
-
-    robotStatus.textContent =
-        "😭 EMOTIONAL DAMAGE";
-
-
-    robotChestText.textContent =
-        "WHY";
-
-
-    /*
-       Show robot.
-    */
-
-    cryingRobot.classList.add(
-        "robot-visible"
-    );
-
-    robotMessage.classList.add(
-        "robot-message-visible"
-    );
-
-
-    /*
-       Clear previous timer.
-       This is important if the user clicks
-       again while the robot is already visible.
-    */
-
-    clearTimeout(
-        robotTimer
-    );
-
-
-    /*
-       Keep robot visible for 5 seconds.
-    */
-
-    robotTimer =
-        setTimeout(
-            hideCryingRobot,
-            5000
-        );
-}
-
-
-/* =====================================================
-   HIDE ROBOT
-===================================================== */
-
-function hideCryingRobot() {
-
-    cryingRobot.classList.remove(
-        "robot-visible"
-    );
-
-    robotMessage.classList.remove(
-        "robot-message-visible"
-    );
-
-    robotStatus.textContent =
-        "RECOVERING...";
-
-
-    setTimeout(
-        () => {
-
-            robotStatus.textContent =
-                "WAITING...";
-
-        },
-        500
-    );
-}
     // ============================================================
 // BUTTON SOUND + COLOUR EFFECT
 // ============================================================
@@ -336,6 +191,21 @@ let audioContext = null;
 let popupTimeout = null;
 
 let isSpeaking = false;
+// ==========================================
+// ADAPTIVE BUTTON SPEED
+// ==========================================
+
+function getEscapeSpeed() {
+    // Clicks 1–10: moves, but slowly
+    if (clicks <= 10) {
+        return 0.35;
+    }
+
+    // Every 6 clicks, increase the speed
+    const level = Math.floor((clicks - 10) / 6);
+
+    return Math.min(2.0, 0.35 + (level * 0.30));
+}
 
 
 /* =====================================================
@@ -585,8 +455,9 @@ document.addEventListener(
             newY;
 
         if (
-            clicks >= 5 &&
-            event.pointerType === "mouse"
+    clicks >= 1 &&
+    event.pointerType === "mouse"
+
         ) {
 
             checkCursorThreat();
@@ -648,7 +519,7 @@ function moveButton(
     predicted = false
 ) {
 
-    if (clicks < 5) {
+    if (clicks < 1) {
         return;
     }
 
