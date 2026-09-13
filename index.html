@@ -243,88 +243,101 @@
                     <div>
                         <div class="section-label">
                             AI COMMENTATOR
-                        </div>
+                       <!-- ================= ROBOT REACTION ================= -->
 
-                        <h2>
-                            Make The Computer Laugh
-                        </h2>
+<section class="robot-section glass">
+
+    <div class="robot-header">
+        <div class="robot-title">
+            <div class="robot-icon">🤖</div>
+
+            <div>
+                <div class="section-label">
+                    BUTTON EMOTIONAL DAMAGE
+                </div>
+
+                <h2>THE ROBOT IS NOT OKAY</h2>
+            </div>
+        </div>
+
+        <div class="robot-status" id="robotStatus">
+            WAITING...
+        </div>
+    </div>
+
+
+    <div id="robotStage" class="robot-stage">
+
+        <!-- Robot -->
+        <div id="cryingRobot" class="crying-robot">
+
+            <!-- Antennas -->
+            <div class="antenna left-antenna"></div>
+            <div class="antenna right-antenna"></div>
+
+            <!-- Head -->
+            <div class="robot-head">
+
+                <div class="robot-ear left-ear"></div>
+                <div class="robot-ear right-ear"></div>
+
+                <!-- Eyes -->
+                <div class="robot-eyes">
+
+                    <div class="robot-eye">
+                        <div class="eye-pupil"></div>
+                        <div class="tear"></div>
+                    </div>
+
+                    <div class="robot-eye">
+                        <div class="eye-pupil"></div>
+                        <div class="tear"></div>
                     </div>
 
                 </div>
 
-
-                <p class="panel-description">
-                    Write something. The computer will read your
-                    comment aloud and then laugh at it.
-                </p>
-
-
-                <div class="comment-input-wrapper">
-
-                    <textarea
-                        id="commentBox"
-                        maxlength="180"
-                        placeholder="Type your most useless thought..."
-                    ></textarea>
-
-                    <div class="character-count">
-                        <span id="characterCount">0</span>/180
-                    </div>
-
+                <!-- Face -->
+                <div class="robot-mouth">
+                    <span>╭︵╮</span>
                 </div>
 
-
-                <button
-                    id="commentButton"
-                    class="neon-button"
-                    type="button"
-                >
-                    <span>🗣️</span>
-                    READ & LAUGH
-                </button>
-
-
-                <!-- Comment display -->
-
-                <div
-                    id="commentDisplay"
-                    class="comment-display hidden"
-                >
-
-                    <div class="comment-avatar">
-                        👤
-                    </div>
-
-                    <div class="comment-content">
-
-                        <span class="comment-label">
-                            YOUR COMMENT
-                        </span>
-
-                        <p id="commentText">
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Computer response -->
-
-                <div
-                    id="computerResponse"
-                    class="computer-response"
-                >
-                    <span class="robot-face">🤖</span>
-
-                    <span id="responseText">
-                        Waiting for your questionable wisdom...
-                    </span>
-                </div>
+                <!-- Cheeks -->
+                <div class="robot-cheek left-cheek"></div>
+                <div class="robot-cheek right-cheek"></div>
 
             </div>
 
 
+            <!-- Body -->
+            <div class="robot-body">
+
+                <div class="robot-chest">
+                    <span id="robotChestText">
+                        WHY
+                    </span>
+                </div>
+
+                <div class="robot-light"></div>
+
+            </div>
+
+
+            <!-- Arms -->
+            <div class="robot-arm left-arm"></div>
+            <div class="robot-arm right-arm"></div>
+
+        </div>
+
+
+        <!-- Speech -->
+        <div id="robotMessage" class="robot-message">
+            <span>🤖</span>
+            PLEASE DON'T CLICK IT...
+        </div>
+
+    </div>
+
+</section>
             <!-- ================= AI ANALYSIS ================= -->
 
             <div class="panel glass">
