@@ -196,7 +196,11 @@ button{user-select:none;-webkit-tap-highlight-color:transparent}
 .stat-card{
   padding:18px;border-radius:18px;display:flex;align-items:center;gap:13px;
   transition:transform .2s ease,border-color .2s ease;
+  animation:cardPop .55s cubic-bezier(.2,.9,.2,1) both;
 }
+.stat-card:nth-child(2){animation-delay:.08s}
+.stat-card:nth-child(3){animation-delay:.16s}
+.stat-card:nth-child(4){animation-delay:.24s}
 .stat-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.2)}
 .stat-icon{
   width:42px;height:42px;display:grid;place-items:center;border-radius:12px;
@@ -275,7 +279,13 @@ textarea::placeholder{color:#5e5e6d}
   background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);
   opacity:.38;filter:grayscale(1);
   transition:opacity .3s ease,filter .3s ease,transform .3s ease,border-color .3s ease;
+  animation:cardPop .55s cubic-bezier(.2,.9,.2,1) both;
 }
+.achievement:nth-child(2){animation-delay:.08s}
+.achievement:nth-child(3){animation-delay:.16s}
+.achievement:nth-child(4){animation-delay:.24s}
+.achievement:nth-child(5){animation-delay:.32s}
+.achievement:nth-child(6){animation-delay:.4s}
 .achievement.unlocked{
   opacity:1;filter:grayscale(0);border-color:rgba(255,48,79,.3);
   background:linear-gradient(135deg,rgba(255,48,79,.08),rgba(140,92,255,.05));
@@ -288,6 +298,7 @@ textarea::placeholder{color:#5e5e6d}
 .achievement strong{display:block;font-size:9px;letter-spacing:.5px}
 .achievement span{display:block;margin-top:4px;color:var(--muted);font-size:8px}
 @keyframes achievementUnlock{0%{transform:scale(.85)}60%{transform:scale(1.05)}100%{transform:scale(1)}}
+@keyframes cardPop{0%{opacity:0;transform:translateY(18px) scale(.94)}70%{opacity:1;transform:translateY(-3px) scale(1.02)}100%{opacity:1;transform:translateY(0) scale(1)}}
 
 #leaderboard{margin-top:18px}
 .leaderboard-row{
