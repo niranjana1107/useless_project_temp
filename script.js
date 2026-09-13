@@ -94,6 +94,18 @@ const toast =
 
 const toastText =
     document.getElementById("toastText");
+
+const robotStatus =
+    document.getElementById("robotStatus");
+
+const robotMessage =
+    document.getElementById("robotMessage");
+
+const robotChestText =
+    document.getElementById("robotChestText");
+
+const cryingRobot =
+    document.getElementById("cryingRobot");
     // ============================================================
 // BUTTON SOUND + COLOUR EFFECT
 // ============================================================
@@ -210,21 +222,24 @@ function saveClicks() {
 
 function getSpeedLevel() {
 
-        if (clicks <= 3) return 0;
-        if (clicks <= 6) return 1;
-        if (clicks <= 12) return 2;
-        if (clicks <= 18) return 3;
-        if (clicks <= 25) return 4;
+    if (clicks <= 3) return 0;
+    if (clicks <= 6) return 1;
+    if (clicks <= 12) return 2;
+    if (clicks <= 18) return 3;
+    if (clicks <= 30) return 4;
+    if (clicks <= 45) return 5;
 
-        return 5;
+    return 6;
 }
 
 function getEscapeDifficulty() {
 
-        if (clicks <= 3) return 0;
-        if (clicks <= 6) return 0.25;
-        if (clicks <= 12) return 0.55;
-        if (clicks <= 18) return 0.8;
+    if (clicks <= 3) return 0;
+    if (clicks <= 6) return 0.25;
+    if (clicks <= 12) return 0.45;
+    if (clicks <= 18) return 0.2;
+    if (clicks <= 30) return 0.65;
+    if (clicks <= 45) return 0.9;
 
         return 1;
 }
@@ -233,10 +248,27 @@ function getEscapeSpeed() {
 
         if (clicks <= 3) return 0;
         if (clicks <= 6) return 1;
-        if (clicks <= 12) return 2.5;
-        if (clicks <= 18) return 4;
+        if (clicks <= 12) return 1.5;
+        if (clicks <= 18) return 0.5;
+        if (clicks <= 30) return 3;
+        if (clicks <= 45) return 5;
 
-        return 6;
+        return 8;
+}
+
+function getDifficultyLabel(level) {
+
+    const labels = [
+        "CALM",
+        "GENTLE",
+        "EASY",
+        "EASY",
+        "MODERATE",
+        "ADVANCED",
+        "UNDEFEATABLE"
+    ];
+
+    return labels[level] || "UNDEFEATABLE";
 }
 
 /* =====================================================
@@ -360,10 +392,36 @@ function updateDisplay() {
             "ACTIVE";
 
         arenaStatus.textContent =
-            `ESCAPE PROTOCOL ${level}.0`;
+            `${getDifficultyLabel(level)} MODE // LEVEL ${level}`;
     }
 
     updateAnalysis(score, level);
+}
+
+function updateCommentator() {
+
+    if (!robotStatus || !robotMessage || !robotChestText) return;
+
+    const level = getSpeedLevel();
+    const reactions = [
+        ["WAITING...", "PLEASE DON'T CLICK IT...", "WHY"],
+        ["UNEASY", "That was unnecessary.", "NO"],
+        ["CONCERNED", "Please stop clicking me.", "HELP"],
+        ["RELIEVED", "Level 3 is... almost fair?", "EASY"],
+        ["PANICKING", "The button has entered moderate mode!", "RUN"],
+        ["CRITICAL", "Advanced escape protocol engaged!", "ERROR"],
+        ["DEFEATED?", "This button cannot be caught.", "RIP"]
+    ];
+
+    const reaction = reactions[level];
+
+    robotStatus.textContent = reaction[0];
+    robotMessage.innerHTML = `<span>🤖</span> ${reaction[1]}`;
+    robotChestText.textContent = reaction[2];
+
+    if (cryingRobot) {
+        cryingRobot.classList.add("robot-visible");
+    }
 }
 
 
@@ -574,7 +632,7 @@ function moveButton(
         -Infinity;
 
     const candidates =
-        8 +
+        6 +
         getSpeedLevel() * 2;
 
 
@@ -672,14 +730,14 @@ function moveButton(
     }
 
 
-    const speed =
-        getSpeedLevel();
+    const escapeSpeed =
+        getEscapeSpeed();
 
     const duration =
         Math.max(
-            70,
-            280 -
-            speed * 20
+            120,
+            500 -
+            escapeSpeed * 40
         );
 
 
@@ -718,7 +776,7 @@ function moveButton(
         () => {
 
             arenaStatus.textContent =
-                `ESCAPE PROTOCOL ${getSpeedLevel()}.0`;
+                `${getDifficultyLabel(getSpeedLevel())} MODE // LEVEL ${getSpeedLevel()}`;
 
         },
         600
@@ -1387,6 +1445,8 @@ uselessButton.addEventListener("click", function () {
             escapeMode.textContent =
                 "ACTIVE";
         }
+
+        updateCommentator();
 
 
         /*

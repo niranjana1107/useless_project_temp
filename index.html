@@ -243,7 +243,54 @@
                     <div>
                         <div class="section-label">
                             AI COMMENTATOR
-                       <!-- ================= ROBOT REACTION ================= -->
+                        </div>
+
+                        <h2>
+                            Say Something Useless
+                        </h2>
+                    </div>
+                </div>
+
+                <p class="panel-description">
+                    Give the computer something pointless to read aloud.
+                </p>
+
+                <div class="comment-input-wrapper">
+                    <textarea
+                        id="commentBox"
+                        maxlength="180"
+                        placeholder="Type your most useless thought..."
+                    ></textarea>
+
+                    <span class="character-count">
+                        <span id="characterCount">0</span>/180
+                    </span>
+                </div>
+
+                <button
+                    id="commentButton"
+                    class="neon-button"
+                    type="button"
+                >
+                    <span>🗣️</span>
+                    READ &amp; LAUGH
+                </button>
+
+                <div id="commentDisplay" class="comment-display hidden">
+                    <div class="comment-avatar">💬</div>
+                    <div class="comment-content">
+                        <div class="comment-label">YOUR USELESS THOUGHT</div>
+                        <p id="commentText"></p>
+                    </div>
+                </div>
+
+                <div class="computer-response">
+                    <span class="robot-face">🤖</span>
+                    <span id="responseText">Waiting for questionable input...</span>
+                </div>
+            </div>
+
+            <!-- ================= ROBOT REACTION ================= -->
 
 <section class="robot-section glass">
 
